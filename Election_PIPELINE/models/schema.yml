@@ -1,0 +1,14 @@
+models:
+  - name: tweets
+    columns:
+      - name: tweet_id
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_not_be_null
+      - name: created_at
+        tests:
+            - dbt_expectations.expect_column_values_to_be_between:
+                  arguments:
+                    min_value: "TO_DATE('2020-01-01')"
+                    max_value: "TO_DATE('2020-12-31')"
+                

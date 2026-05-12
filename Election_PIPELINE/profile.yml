@@ -1,0 +1,12 @@
+Election_PIPELINE:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: ni17323.me_central2.gcp
+      user: mohamed
+      password: Q1w2e3r4t5y6#snowflake
+      role: ACCOUNTADMIN        # ← what role is this?
+      database: ELECTION_DB
+      warehouse: election_wh
+      schema: analytics
